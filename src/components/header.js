@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
+import '../styles/style.css'
+class Header extends Component {
 
-const getYear = () => {
-    const date = new Date();
-    return date.getFullYear();
+    inputChangedHandler(event) {
+        console.log("I was changed!! to " + event.target.value);
+    }
+
+    render() {
+        return (
+        <header>
+            <div className="logo">Logo</div>
+            <input type="text" onChange={this.inputChangedHandler}></input>
+        </header>
+        )
+    }
 }
 
-const Header = () => {
-    return <h1>The date is {getYear()}</h1>
-}
 
 export default Header;
